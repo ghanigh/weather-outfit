@@ -1,3 +1,4 @@
+/* Corps de la page */
 body {
   font-family: 'Arial', sans-serif;
   background: linear-gradient(to right, #2c3e50, #34495e);
@@ -10,26 +11,31 @@ body {
   height: 100vh;
 }
 
+/* Titres */
 h1, h2 {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
   margin: 10px 0;
 }
 
+/* Conteneur principal */
 .App {
   text-align: center;
   background-color: rgba(236, 240, 241, 0.1);
   border-radius: 15px;
   padding: 40px;
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Effet au survol du conteneur */
 .App:hover {
   transform: scale(1.02);
+  background-color: rgba(236, 240, 241, 0.2);
 }
 
+/* Styles pour les boutons */
 button {
-  background-color: #e74c3c; /* Rouge vif */
+  background: linear-gradient(90deg, #e74c3c, #c0392b); /* Dégradé rouge */
   color: #fff;
   border: none;
   padding: 12px 24px;
@@ -37,14 +43,35 @@ button {
   cursor: pointer;
   margin-top: 20px;
   border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
+/* Effet au survol des boutons */
 button:hover {
-  background-color: #c0392b; /* Rouge plus sombre */
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Animation de l'ombre de bouton */
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+button:hover::after {
+  opacity: 1;
+}
+
+/* Styles pour le formulaire */
 form {
   display: flex;
   flex-direction: column;
@@ -52,11 +79,13 @@ form {
   margin-top: 20px;
 }
 
+/* Labels */
 label {
   font-weight: bold;
   color: #ecf0f1;
 }
 
+/* Styles pour les champs de saisie */
 select, input {
   margin: 10px;
   padding: 10px;
@@ -65,6 +94,7 @@ select, input {
   border: none;
   border-radius: 5px;
   outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 select {
@@ -72,21 +102,31 @@ select {
   color: #333;
 }
 
+/* Effet au focus des champs */
+select:focus, input:focus {
+  border: 2px solid #3498db; /* Bordure bleue au focus */
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Styles pour les médias (responsive) */
 @media (max-width: 600px) {
   .App {
     padding: 20px;
   }
 }
 
+/* Styles pour le bouton de villes */
 button#citiesButton {
   position: absolute;
   top: 20px;
   left: 20px;
-  background-color: #3498db; /* Couleur bleue */
+  background: linear-gradient(90deg, #3498db, #2980b9); /* Dégradé bleu */
 }
 
+/* Effet au survol du bouton de villes */
 button#citiesButton:hover {
-  background-color: #2980b9; /* Couleur bleue plus sombre */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Style pour la liste des villes */
@@ -100,25 +140,30 @@ button#citiesButton:hover {
   margin-top: 10px; /* Espace au-dessus de la liste des villes */
 }
 
+/* Titres de la liste des villes */
 .cities-list h3 {
   margin: 0;
   color: #e74c3c; /* Couleur titre liste */
 }
 
+/* Liste des villes */
 .cities-list ul {
   list-style: none;
   padding: 0;
 }
 
+/* Items de la liste des villes */
 .cities-list li {
   padding: 8px;
   color: #34495e; /* Couleur du texte des villes */
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, padding 0.2s ease;
 }
 
+/* Effet au survol des items de la liste des villes */
 .cities-list li:hover {
   background-color: rgba(0, 0, 0, 0.1);
+  padding-left: 10px; /* Petit effet de décalage */
 }
 
 /* Style pour "Ma position" */
@@ -129,6 +174,7 @@ button#citiesButton:hover {
   transition: background-color 0.2s ease;
 }
 
+/* Effet au survol de "Ma position" */
 .user-location:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -153,7 +199,7 @@ button#citiesButton:hover {
 
 /* Style pour le logo */
 .logo {
-  width: 300px; /* Largeur du logo */
+  width: 200px; /* Largeur réduite du logo */
   height: auto; /* Hauteur automatique pour garder le ratio */
   margin-bottom: 10px; /* Espace sous le logo */
 }
