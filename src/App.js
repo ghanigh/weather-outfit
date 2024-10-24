@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home'; // Assurez-vous que le chemin est correct
-import AddClothing from './pages/AddClothing'; // Assurez-vous que le chemin est correct
-import './App.css'; // Assurez-vous que le fichier CSS est bien importé
+import Home from './pages/Home';
+import AddClothing from './pages/AddClothing';
+import './App.css';
 
 function App() {
   return (
