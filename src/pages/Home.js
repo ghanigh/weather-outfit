@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { fetchWeatherByCity } from '../utils/api';
+import logo from '../assets/logo.png';
 
 const Home = () => {
   const [weather, setWeather] = useState(null);
@@ -149,6 +150,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
+      <img src={logo} alt="Logo" className="logo" /> {/* Ajoutez votre logo ici */}
       <h1>Bienvenue sur Weather Outfit</h1>
       <button onClick={() => setShowCities(!showCities)} className="cities-button">
         Autres villes
