@@ -136,6 +136,10 @@ button#citiesButton:hover {
 /* Styles supplémentaires pour les suggestions de tenue */
 .suggestion-container {
   margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .suggestion-container h3 {
@@ -145,4 +149,11 @@ button#citiesButton:hover {
 .suggestion-container p {
   font-size: 1.2em;
   margin: 10px 0;
+}
+
+/* Style pour le logo */
+.logo {
+  width: 150px; /* Largeur du logo */
+  height: auto; /* Hauteur automatique pour garder le ratio */
+  margin-bottom: 20px; /* Espace sous le logo */
 }
