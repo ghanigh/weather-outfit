@@ -1,43 +1,148 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #2c3e50, #34495e);
   margin: 0;
   padding: 0;
+  color: #ecf0f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 h1, h2 {
-  color: #1c47a9;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  margin: 10px 0;
 }
 
 .App {
   text-align: center;
-  padding: 20px;
+  background-color: rgba(236, 240, 241, 0.1);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.App:hover {
+  transform: scale(1.02);
 }
 
 button {
-  background-color: #1c47a9;
-  color: white;
+  background-color: #e74c3c; /* Rouge vif */
+  color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 12px 24px;
+  font-size: 18px;
   cursor: pointer;
   margin-top: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-  background-color: #1452aa;
+  background-color: #c0392b; /* Rouge plus sombre */
+  transform: translateY(-2px);
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
-input {
+label {
+  font-weight: bold;
+  color: #ecf0f1;
+}
+
+select, input {
   margin: 10px;
   padding: 10px;
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 80%; /* Responsive */
+  max-width: 300px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+select {
+  background-color: #fff;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 20px;
+  }
+}
+
+button#citiesButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #3498db; /* Couleur bleue */
+}
+
+button#citiesButton:hover {
+  background-color: #2980b9; /* Couleur bleue plus sombre */
+}
+
+/* Style pour la liste des villes */
+.cities-list {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 10px; /* Espace au-dessus de la liste des villes */
+}
+
+.cities-list h3 {
+  margin: 0;
+  color: #e74c3c; /* Couleur titre liste */
+}
+
+.cities-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cities-list li {
+  padding: 8px;
+  color: #34495e; /* Couleur du texte des villes */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cities-list li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour "Ma position" */
+.user-location {
+  padding: 8px;
+  color: #2ecc71; /* Couleur verte */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.user-location:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Styles supplémentaires pour les suggestions de tenue */
+.suggestion-container {
+  margin-top: 20px;
+}
+
+.suggestion-container h3 {
+  color: #ffcc00; /* Couleur des titres de suggestion */
+}
+
+.suggestion-container p {
+  font-size: 1.2em;
+  margin: 10px 0;
 }
